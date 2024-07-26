@@ -6,7 +6,7 @@ uses
   portifolio.view.utils.grid in 'src\view\utils\portifolio.view.utils.grid.pas',
   portifolio.model.behaviors.controlForms in 'src\model\behaviors\portifolio.model.behaviors.controlForms.pas',
   portifolio.model.behaviors.FormManager in 'src\model\behaviors\portifolio.model.behaviors.FormManager.pas',
-  portifolio.model.behaviors in 'src\model\behaviors\portifolio.model.behaviors.pas',
+  portifolio.model.behaviors.LogException in 'src\model\behaviors\portifolio.model.behaviors.LogException.pas',
   portifolio.model.business.carga in 'src\model\business\portifolio.model.business.carga.pas',
   portifolio.model.business.controlForms in 'src\model\business\portifolio.model.business.controlForms.pas',
   portifolio.model.business.interfaces in 'src\model\business\portifolio.model.business.interfaces.pas',

@@ -132,7 +132,7 @@
         <DCCReference Include="src\view\utils\portifolio.view.utils.grid.pas"/>
         <DCCReference Include="src\model\behaviors\portifolio.model.behaviors.controlForms.pas"/>
         <DCCReference Include="src\model\behaviors\portifolio.model.behaviors.FormManager.pas"/>
-        <DCCReference Include="src\model\behaviors\portifolio.model.behaviors.pas"/>
+        <DCCReference Include="src\model\behaviors\portifolio.model.behaviors.LogException.pas"/>
         <DCCReference Include="src\model\business\portifolio.model.business.carga.pas"/>
         <DCCReference Include="src\model\business\portifolio.model.business.controlForms.pas"/>
         <DCCReference Include="src\model\business\portifolio.model.business.interfaces.pas"/>
