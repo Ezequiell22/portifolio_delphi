@@ -12,11 +12,13 @@ type
   TModelBehaviorsLogException = class
   private
     FLogFile: String;
+    FDirImagesLog: string;
   public
     constructor Create;
     procedure TrataException(Sender: TObject; E: Exception);
     procedure GravarLog(Value: String);
     function CapturarTela(Aform: String): string;
+    procedure ConfDirImages;
   end;
 
 var
@@ -56,7 +58,7 @@ begin
       cv.Free;
       ReleaseDC(0, dc);
 
-      result := ChangeFileExt(ParamStr(0), '') + '_' + Aform +
+      result := FDirImagesLog+ Aform +
         formatDateTime('DDMMYYYHHmm', now) + '.bmp';
 
       image1.Picture.Assign(bitmap);
@@ -70,10 +72,19 @@ begin
   end;
 end;
 
+procedure TModelBehaviorsLogException.ConfDirImages;
+begin
+  FDirImagesLog := getCurrentDir() + '\CapturasDeTelaErro\portifolio\';
+  if not DirectoryExists(FDirImagesLog) then
+    ForceDirectories(FDirImagesLog)
+
+end;
+
 constructor TModelBehaviorsLogException.Create;
 begin
   ReportMemoryLeaksOnShutdown := true;
   FLogFile := ChangeFileExt(ParamStr(0), '.log');
+  ConfDirImages;
   Application.OnException := TrataException;
 end;
 
@@ -115,8 +126,8 @@ begin
   end;
 
   var
-  msg := 'Form: ' + form +slinebreak + ' | Caption: ' + caption+slinebreak + ' | Classe Erro:' +
-    classError+ slinebreak + ' | Erro:' + error + ' ';
+  msg := 'Form: ' + form + slinebreak + ' | Caption: ' + caption + slinebreak +
+    ' | Classe Erro:' + classError + slinebreak + ' | Erro:' + error + ' ';
 
   GravarLog(msg);
 
